@@ -16,46 +16,113 @@ if ( ! defined( '_S_VERSION' ) ) {
  */
 add_action('init','practice_register_post_types');
 function practice_register_post_types(){
-	register_post_type('team',[
-	   'label'=>null,
-	   'labels'=>[
-		'name'               => 'Team', // name for the post type.
-			'singular_name'      => 'Team', // name for single post of that type.
-			'add_new'            => 'Add New Member', // to add a new post.
-			'add_new_item'       => 'Adding Member', // title for a newly created post in the admin panel.
-			'edit_item'          => 'Edit Member', // for editing post type.
-			'new_item'           => 'New Member', // new post's text.
-			'view_item'          => 'View Member', // for viewing this post type.
-			'search_items'       => 'Search Members', // search for these post types.
-			'not_found'          => 'Member Not Found', // if search has not found anything.
-			'parent_item_colon'  => '', // for parents (for hierarchical post types).
-			'menu_name'          => 'Team', // menu name.
-	   ],
-	   'public'              => true,
-	   'menu_position'       => 5,
-	   'menu_icon'           => null,
-	   'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+		register_post_type('team',[
+		'label'=>null,
+		'labels'=>[
+			'name'               => 'Team', // name for the post type.
+				'singular_name'      => 'Team', // name for single post of that type.
+				'add_new'            => 'Add New Member', // to add a new post.
+				'add_new_item'       => 'Adding Member', // title for a newly created post in the admin panel.
+				'edit_item'          => 'Edit Member', // for editing post type.
+				'new_item'           => 'New Member', // new post's text.
+				'view_item'          => 'View Member', // for viewing this post type.
+				'search_items'       => 'Search Members', // search for these post types.
+				'not_found'          => 'Member Not Found', // if search has not found anything.
+				'parent_item_colon'  => '', // for parents (for hierarchical post types).
+				'menu_name'          => 'Team', // menu name.
+		],
+		'public'              => true,
+		'menu_position'       => 5,
+		'menu_icon'           => null,
+		'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' )
 
-	]);
-	register_taxonomy('role',['team'],[
-		'label'                 => '', // Default taken from $labels->name
-		// Full list: wp-kama.com/function/get_taxonomy_labels
-		'labels'                => [
-			'name'              => 'Roles',
-			'singular_name'     => 'Role',
-			'search_items'      => 'Search Roles',
-			'all_items'         => 'All Roles',
-			'view_item '        => 'View Role',
-			'edit_item'         => 'Edit Role',
-			'update_item'       => 'Update Role',
-			'add_new_item'      => 'Add New Role',
-			'new_item_name'     => 'New Role Name',
-			'menu_name'         => 'Roles',
-			'back_to_items'     => '← Back to Roles',
+		]);
+		register_taxonomy('role',['team'],[
+			'label'                 => '', // Default taken from $labels->name
+			// Full list: wp-kama.com/function/get_taxonomy_labels
+			'labels'                => [
+				'name'              => 'Roles',
+				'singular_name'     => 'Role',
+				'search_items'      => 'Search Roles',
+				'all_items'         => 'All Roles',
+				'view_item '        => 'View Role',
+				'edit_item'         => 'Edit Role',
+				'update_item'       => 'Update Role',
+				'add_new_item'      => 'Add New Role',
+				'new_item_name'     => 'New Role Name',
+				'menu_name'         => 'Roles',
+				'back_to_items'     => '← Back to Roles',
 		],
 		'public'                => true,
-]);
-}
+		]);
+		//register post type testimonials
+		register_post_type('testimonials',[
+			'label'=>null,
+			'labels'=>[
+			'name'               => 'Testimonials', // name for the post type.
+				'singular_name'      => 'Testimonial', // name for single post of that type.
+				'add_new'            => 'Add New Testimonial', // to add a new post.
+				'add_new_item'       => 'Adding Testimonial', // title for a newly created post in the admin panel.
+				'edit_item'          => 'Edit Testimonial', // for editing post type.
+				'new_item'           => 'New Testimonial', // new post's text.
+				'view_item'          => 'View Testimonial', // for viewing this post type.
+				'search_items'       => 'Search Testimonials', // search for these post types.
+				'not_found'          => 'Testimonial Not Found', // if search has not found anything.
+				'parent_item_colon'  => '', // for parents (for hierarchical post types).
+				'menu_name'          => 'Testimonials', // menu name.
+			],
+			'public'              => true,
+			'menu_position'       => 5,
+			'menu_icon'           => null,
+			'supports' => array( 'title', 'thumbnail', 'excerpt' )
+
+		]);
+				//register post type Services
+				register_post_type('services',[
+					'label'=>null,
+					'labels'=>[
+					'name'               => 'Services', // name for the post type.
+						'singular_name'      => 'Service', // name for single post of that type.
+						'add_new'            => 'Add New Service', // to add a new post.
+						'add_new_item'       => 'Adding Service', // title for a newly created post in the admin panel.
+						'edit_item'          => 'Edit Service', // for editing post type.
+						'new_item'           => 'New Service', // new post's text.
+						'view_item'          => 'View Service', // for viewing this post type.
+						'search_items'       => 'Search Service', // search for these post types.
+						'not_found'          => 'Service Not Found', // if search has not found anything.
+						'parent_item_colon'  => '', // for parents (for hierarchical post types).
+						'menu_name'          => 'Services', // menu name.
+					],
+					'public'              => true,
+					'menu_position'       => 5,
+					'menu_icon'           => null,
+					'supports' => array( 'title', 'editor','thumbnail', 'excerpt' )
+		
+				]);
+				//register post type Services
+				register_post_type('portfolio',[
+					'label'=>null,
+					'labels'=>[
+					'name'               => 'Portfolio', // name for the post type.
+						'singular_name'      => 'Portfolio', // name for single post of that type.
+						'add_new'            => 'Add New Portfolio', // to add a new post.
+						'add_new_item'       => 'Adding Portfolio', // title for a newly created post in the admin panel.
+						'edit_item'          => 'Edit Portfolio', // for editing post type.
+						'new_item'           => 'New Portfolio', // new post's text.
+						'view_item'          => 'View Portfolio', // for viewing this post type.
+						'search_items'       => 'Search Portfolio', // search for these post types.
+						'not_found'          => 'Portfolio Not Found', // if search has not found anything.
+						'parent_item_colon'  => '', // for parents (for hierarchical post types).
+						'menu_name'          => 'Portfolio', // menu name.
+					],
+					'public'              => true,
+					'menu_position'       => 5,
+					'menu_icon'           => null,
+					'supports' => array( 'title', 'editor','thumbnail', 'excerpt' )
+		
+				]);
+				
+}//register_post_type
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -227,6 +294,7 @@ function simple_approach_practice_scripts() {
 	wp_enqueue_script('slick-js','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js?ver=6.3');
 	wp_enqueue_script('swiper-js','https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js?ver=6.3');
 	
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -259,7 +327,10 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
+/**
+ * Register ACF fields If not exist
+ */
+require_once get_template_directory() . '/inc/acf-register-fields.php';
 /**
  * Widgets Class
  */
@@ -276,4 +347,18 @@ add_action( 'widgets_init', 'register_practice_contact' );
  * Walker Class
  */
 require get_template_directory() . '/inc/walker-menu-class.php';
+/**
+ * Admin Notices
+ */
+add_action( 'admin_notices', 'practice_dependencies' );
+
+function practice_dependencies() {
+	//check if ACF exists, otherwise warning
+	if (!class_exists('ACF')) {
+		echo '<div class="error"><p>' . __( 'Warning: The theme needs Advanced Custom Fields to function', 'simple-approach-practice' ) . '</p></div>';
+	
+	}
+
+}
+
 

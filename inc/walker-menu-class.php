@@ -28,7 +28,7 @@ class Practice_Menu_Walker extends Walker_Nav_Menu {
 			//add nav-link class to parent level a tags
             $output .= ' class="nav-link"';
         } else {
-            //add dropdown-item to submenu level items
+            //add dropdown-item class to submenu level items
 			$output .= ' class="dropdown-item"';
         }
 
